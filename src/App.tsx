@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback/* , useEffect */ } from "react";
 import "./App.css";
 
 import { Color } from "./components/Color";
@@ -41,7 +41,7 @@ function App() {
 		setCopyColor(color);
 	}, []);
 
-	const escFunction = (event: any) => {
+	/* const escFunction = (event: any) => {
 		event.preventDefault();
 		if (event.keyCode === 32) {
 			handleColorChange();
@@ -56,7 +56,7 @@ function App() {
 		return () => {
 			window.removeEventListener("keydown", escFunction, false);
 		};
-	}, []); // Empty array ensures that effect is only run on mount and unmount
+	}, []); // Empty array ensures that effect is only run on mount and unmount */
 	if (!Data) {
 		return null;
 	}
