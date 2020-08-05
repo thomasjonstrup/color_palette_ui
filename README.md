@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## UI is inspired by
+
+https://uidesigndaily.com/posts/sketch-color-palette-generator-picker--day-1114
+
 ## Available Scripts
 
 In the project directory, you can run:
