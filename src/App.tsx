@@ -47,22 +47,24 @@ function App() {
 		}, 2000)
 	}, []);
 
-	const handleSpacePress = (event: any) => {
-		event.preventDefault();
-		if (event.keyCode === 32) {
-			handleColorChange();
-		}
-	};
 
 	// Bind and unbind events
 	// Add event listeners
 	useEffect(() => {
+		const handleSpacePress = (event: any) => {
+			event.preventDefault();
+			if (event.keyCode === 32) {
+				handleColorChange();
+			}
+		};
+
+
 		window.addEventListener("keydown", handleSpacePress, false);
 		// Remove event listeners on cleanup
 		return () => {
 			window.removeEventListener("keydown", handleSpacePress, false);
 		};
-	}, [handleSpacePress]); // Empty array ensures that effect is only run on mount and unmount
+	}, [handleColorChange]); // Empty array ensures that effect is only run on mount and unmount
 	if (!Data) {
 		return null;
 	}
