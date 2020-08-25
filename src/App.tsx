@@ -1,4 +1,5 @@
 import React, { useState, useCallback/* , useEffect */ } from "react";
+import copy from 'copy-to-clipboard';
 import "./App.css";
 
 import { Color } from "./components/Color";
@@ -30,7 +31,7 @@ function App() {
 		Data[Math.floor(Math.random() * Data.length)]
 	);
 
-	const [copyColor, setCopyColor] = useState("");
+	const [copyColor, setCopyColor] = useState('');
 
 	const handleColorChange = useCallback(() => {
 		const random = Data[Math.floor(Math.random() * Data.length)];
@@ -39,6 +40,11 @@ function App() {
 
 	const handleColorCopy = useCallback((color) => {
 		setCopyColor(color);
+		copy(color);
+
+		setTimeout(() => {
+			setCopyColor('')
+		}, 2000)
 	}, []);
 
 	/* const escFunction = (event: any) => {
