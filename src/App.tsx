@@ -1,4 +1,4 @@
-import React, { useState, useCallback/* , useEffect */ } from "react";
+import React, { useState, useCallback, useEffect} from "react";
 import copy from 'copy-to-clipboard';
 import "./App.css";
 
@@ -47,7 +47,7 @@ function App() {
 		}, 2000)
 	}, []);
 
-	/* const escFunction = (event: any) => {
+	const handleSpacePress = (event: any) => {
 		event.preventDefault();
 		if (event.keyCode === 32) {
 			handleColorChange();
@@ -57,17 +57,15 @@ function App() {
 	// Bind and unbind events
 	// Add event listeners
 	useEffect(() => {
-		window.addEventListener("keydown", escFunction, false);
+		window.addEventListener("keydown", handleSpacePress, false);
 		// Remove event listeners on cleanup
 		return () => {
-			window.removeEventListener("keydown", escFunction, false);
+			window.removeEventListener("keydown", handleSpacePress, false);
 		};
-	}, []); // Empty array ensures that effect is only run on mount and unmount */
+	}, [handleSpacePress]); // Empty array ensures that effect is only run on mount and unmount
 	if (!Data) {
 		return null;
 	}
-	/*
-	const randomPalette = ; */
 
 	return (
 		<section className="section1">
