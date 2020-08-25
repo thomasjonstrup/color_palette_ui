@@ -20,6 +20,7 @@ const ColorImg = styled.div`
 	background-color: ${(props) => props.color || "palevioletred"};
 	height: 250px;
 	border-radius: 0.2rem;
+	cursor: pointer;
 `;
 
 const ColorText = styled.div`
@@ -58,7 +59,6 @@ function App() {
 			}
 		};
 
-
 		window.addEventListener("keydown", handleSpacePress, false);
 		// Remove event listeners on cleanup
 		return () => {
@@ -92,26 +92,6 @@ function App() {
 						</Color>
 					);
 				})}
-				{/* 				<div className="color">
-					<div className="color-img light-grey"></div>
-					<div className="color-text">#EEEDF0</div>
-				</div>
-				<div className="color">
-					<div className="color-img medium-grey"></div>
-					<div className="color-text">#A1B5C1</div>
-				</div>
-				<div className="color">
-					<div className="color-img light-red"></div>
-					<div className="color-text">#F9ACA7</div>
-				</div>
-				<div className="color">
-					<div className="color-img grayish-blue"></div>
-					<div className="color-text">#EEEDF0</div>
-				</div>
-				<div className="color">
-					<div className="color-img red"></div>
-					<div className="color-text">#CF365F</div>
-				</div> */}
 			</div>
 			<div className="button_wrapper">
 				<button className="btn" onClick={handleColorChange}>
